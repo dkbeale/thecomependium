@@ -16,8 +16,6 @@ const Spells = () => {
     });
   }, [spellLevel, spellsByClass, page]);
 
-  console.log(spellsList);
-
   return (
     <section>
       <h2>Spells</h2>
@@ -102,8 +100,4 @@ const Spells = () => {
 
 export default Spells;
 
-{
-  /* <li key={spell.slug}>
-              <p>{spell.name}</p>
-            </li> */
-}
+

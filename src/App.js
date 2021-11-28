@@ -6,14 +6,12 @@ import Spells from './components/Spells';
 import Classes from './components/Classes';
 import Races from './components/Races';
 import './styles/App.css';
-import { useState } from "react";
 
 function App() {
-  const [expanded, setExpanded] = useState(false);
 
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav/>
       <Switch>
         <Route exact path="/">
           <Home/>
@@ -21,11 +19,11 @@ function App() {
         <Route exact path="/spells">
           <Spells/>
         </Route>
-        <Route exact path="/classes">
-          <Classes/>
-        </Route>
         <Route exact path="/races">
           <Races/>
+        </Route>
+        <Route exact path="/classes">
+          <Classes/>
         </Route>
       </Switch>
     </BrowserRouter>
