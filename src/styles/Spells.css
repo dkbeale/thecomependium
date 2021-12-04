@@ -1,0 +1,76 @@
+#spells_body {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    
+}
+
+.pagination{
+    margin-top: 5px;
+}
+
+#spell_search_options {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: ridge black;
+}
+
+#spell_lvl {
+    margin-bottom: 10px;
+}
+
+.spell_accordion {
+    margin-bottom: 10px;
+}
+
+.accordion_button_name {
+    margin-right: 8px;
+}
+
+.accordion_button_lvl {
+    margin-right: 8px;
+    color: grey;
+    font-size: small;
+}
+
+.accordion_button_school {
+    color: grey;
+    font-size: small;
+}
+
+.spell_accordion_body {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion_contents_head, .spell_accordion_desc {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: ridge black;
+}
+
+.accordion_contents_head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.accordion_contents_head div {
+    width: 120px;
+    margin-bottom: 8px;
+    
+}
+
+p {
+    margin-bottom: -5px;
+    font-weight: 900;
+}
+
+.accordion_contents_foot {
+    display: flex;
+    flex-direction: column;
+}

@@ -2,9 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const Pagination = ({ itemCount, setPage }) => {
-  //console.log(itemCount)
-  //console.log(itemCount / 50)
-//   const [pages] = useState(Math.ceil(itemCount / 50));
+  
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(itemCount / 50);
@@ -37,7 +35,7 @@ const Pagination = ({ itemCount, setPage }) => {
   };
 
   return (
-    <nav aria-label="Page navigation example">
+    <nav aria-label="Page navigation example" className="pagination">
       <ul className="pagination">
         <li className={`page-item ${currentPage === 1 && "disabled"}`} key="prev">
           <button
