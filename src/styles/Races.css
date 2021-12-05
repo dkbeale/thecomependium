@@ -1,0 +1,17 @@
+#races_card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.race-modal {
+    min-width: 80vw;
+}
+
+
+.modal-content {
+    min-width: 100%;
+    
+}
+
+
+
