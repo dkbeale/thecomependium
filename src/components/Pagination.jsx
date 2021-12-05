@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
-const Pagination = ({ itemCount, setPage }) => {
+const Pagination = ({ itemCount, setPage, spellsByClass }) => {
   
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(itemCount / 50);
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [spellsByClass])
 
   const goToNextPage = () => {
     setPage(currentPage + 1);

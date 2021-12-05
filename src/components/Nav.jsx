@@ -1,4 +1,4 @@
-import d20icon from "../images/d20icon.png";
+import d20icon from "../assets/d20icon.png";
 import "../styles/Nav.css";
 import { Link } from "react-router-dom";
 import NavOffCanvas from "./NavOffCanvas";

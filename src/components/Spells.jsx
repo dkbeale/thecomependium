@@ -3,6 +3,7 @@ import { getSpells } from "../utils/api";
 import Pagination from "./Pagination";
 import { Accordion } from "react-bootstrap";
 import "../styles/Spells.css";
+import SpellFilter from "./SpellFilter";
 
 const Spells = () => {
   const [spellsList, setSpellsList] = useState([]);
@@ -12,56 +13,23 @@ const Spells = () => {
   const [spellCount, setSpellCount] = useState(0);
 
   useEffect(() => {
+    //setPage(1)
     getSpells(spellLevel, spellsByClass, page).then((res) => {
       setSpellsList(res.results);
       setSpellCount(res.count);
     });
   }, [spellLevel, spellsByClass, page]);
 
-  console.log(spellsList[0])
+  const changeClass = ((e) => {
+    setSpellsByClass(e)
+    setPage(1)
+  })
 
   return (
     <section id="spells_body">
       <h2>Spells</h2>
-      <Pagination itemCount={spellCount} setPage={setPage} id="spells_pag" />
-      <div id="spell_search_options">
-        <select
-          className="form-select"
-          id="spell_lvl"
-          aria-label="Default select example"
-          onChange={(e) => setSpellLevel(e.target.value)}
-        >
-          <option defaultValue="">Choose Spell Level</option>
-          <option value="">All Spells</option>
-          <option value="0">Cantrip</option>
-          <option value="1">Level 1</option>
-          <option value="2">Level 2</option>
-          <option value="3">Level 3</option>
-          <option value="4">Level 4</option>
-          <option value="5">Level 5</option>
-          <option value="6">Level 6</option>
-          <option value="7">Level 7</option>
-          <option value="8">Level 8</option>
-          <option value="9">Level 9</option>
-        </select>
-        <select
-          className="form-select"
-          id="spell_class"
-          aria-label="Default select example"
-          onChange={(e) => setSpellsByClass(e.target.value)}
-        >
-          <option defaultValue="">Filter By Class</option>
-          <option value="">All Classes</option>
-          <option value="Bard">Bard</option>
-          <option value="Cleric">Cleric</option>
-          <option value="Druid">Druid</option>
-          <option value="Paladin">Paladin</option>
-          <option value="Ranger">Ranger</option>
-          <option value="Sorcerer">Sorcerer</option>
-          <option value="Warlock">Warlock</option>
-          <option value="Wizard">Wizard</option>
-        </select>
-      </div>
+      <Pagination itemCount={spellCount} setPage={setPage} spellsByClass={spellsByClass} id="spells_pag" />
+      <SpellFilter setSpellLevel={setSpellLevel} changeClass={changeClass}/>
       {spellsList.map((spell) => {
         return (
           <Accordion key={spell.slug} className="spell_accordion">
