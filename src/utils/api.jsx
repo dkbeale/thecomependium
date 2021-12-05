@@ -21,3 +21,13 @@ export const getSpells = (level, dndClass, spellPage) => {
         return res.data
     })
 }
+
+export const getRaces = (race) => {
+    return dndAPI.get(`/races/`, {
+        params: {
+            name: race,
+        }
+    }).then((res) => {
+        return res.data
+    })
+}
